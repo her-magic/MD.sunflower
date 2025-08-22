@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD SUNFLOWER - Premium Flour, Spices & Mustard Oil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .urdu-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Language Toggle -->
+    <div class="bg-amber-600 text-white py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="text-sm">
+                <span id="welcome-text">Welcome to MD SUNFLOWER</span>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="switchLanguage('en')" id="en-btn" class="px-3 py-1 bg-white text-amber-600 rounded text-sm font-medium">English</button>
+                <button onclick="switchLanguage('ur')" id="ur-btn" class="px-3 py-1 bg-amber-700 text-white rounded text-sm font-medium">اردو</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">🌻</span>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-800" id="company-name">MD SUNFLOWER</h1>
+                        <p class="text-gray-600" id="tagline">Premium Quality Products</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <a href="tel:+923112866896" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                        📞 <span id="call-text">Call Now</span>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=923112866896&text=Hello%20MD%20SUNFLOWER%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors">
+                        💬 <span id="whatsapp-text">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="gradient-bg text-white py-3">
+        <div class="container mx-auto px-4">
+            <ul class="flex gap-8 justify-center">
+                <li><a href="#home" class="hover:text-amber-200 transition-colors" id="nav-home">Home</a></li>
+                <li><a href="#products" class="hover:text-amber-200 transition-colors" id="nav-products">Products</a></li>
+                <li><a href="#catalog" class="hover:text-amber-200 transition-colors" id="nav-catalog">Catalog</a></li>
+                <li><a href="#order" class="hover:text-amber-200 transition-colors" id="nav-order">Order Form</a></li>
+                <li><a href="#contact" class="hover:text-amber-200 transition-colors" id="nav-contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold mb-6" id="hero-title">Premium Quality Products</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" id="hero-subtitle">Fresh flour, aromatic spices, and pure mustard oil delivered to your doorstep</p>
+            <div class="flex gap-4 justify-center">
+                <a href="#products" class="bg-white text-amber-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors" id="hero-btn1">View Products</a>
+                <a href="#order" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-amber-600 transition-colors" id="hero-btn2">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800" id="products-title">Our Products</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Flour -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center">
+                        <span class="text-6xl">🌾</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800" id="flour-title">Premium Flour</h3>
+                        <p class="text-gray-600 mb-4" id="flour-desc">Fresh, high-quality flour for all your baking needs</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span id="flour-size1">5kg bag</span>
+                                <span class="font-semibold text-amber-600" id="flour-price1">Wholesale Price</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span id="flour-size2">10kg bag</span>
+                                <span class="font-semibold text-amber-600" id="flour-price2">Wholesale Price</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span id="flour-size3">20kg bag</span>
+                                <span class="font-semibold text-amber-600" id="flour-price3">Wholesale Price</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spices -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-red-100 to-red-200 flex items-center justify-center">
+                        <span class="text-6xl">🌶️</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800" id="spices-title">Fresh Spices</h3>
+                        <p class="text-gray-600 mb-4" id="spices-desc">Aromatic spices to enhance your cooking</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span id="spices-size1">250g pack</span>
+                                <span class="font-semibold text-amber-600" id="spices-price1">Wholesale Price</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span id="spices-size2">500g pack</span>
+                                <span class="font-semibold text-amber-600" id="spices-price2">Wholesale Price</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span id="spices-size3">1kg pack</span>
+                                <span class="font-semibold text-amber-600" id="spices-price3">Wholesale Price</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mustard Oil -->
+                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center">
+                        <span class="text-6xl">🫒</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-3 text-gray-800" id="oil-title">Pure Mustard Oil</h3>
+                        <p class="text-gray-600 mb-4" id="oil-desc">100% pure and natural mustard oil</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span id="oil-size1">500ml bottle</span>
+                                <span class="font-semibold text-amber-600" id="oil-price1">Wholesale Price</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span id="oil-size2">1L bottle</span>
+                                <span class="font-semibold text-amber-600" id="oil-price2">Wholesale Price</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span id="oil-size3">5L container</span>
+                                <span class="font-semibold text-amber-600" id="oil-price3">Wholesale Price</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800" id="catalog-title">Product Catalog</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="text-center">
+                        <span class="text-3xl mb-2 block">🌾</span>
+                        <h4 class="font-semibold" id="cat-wheat">Wheat Flour</h4>
+                        <p class="text-sm text-gray-600" id="cat-wheat-desc">Premium quality</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="text-center">
+                        <span class="text-3xl mb-2 block">🌾</span>
+                        <h4 class="font-semibold" id="cat-gram">Gram Flour</h4>
+                        <p class="text-sm text-gray-600" id="cat-gram-desc">Fresh ground</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="text-center">
+                        <span class="text-3xl mb-2 block">🌶️</span>
+                        <h4 class="font-semibold" id="cat-chili">Red Chili Powder</h4>
+                        <p class="text-sm text-gray-600" id="cat-chili-desc">Hot & spicy</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="text-center">
+                        <span class="text-3xl mb-2 block">🧄</span>
+                        <h4 class="font-semibold" id="cat-turmeric">Turmeric Powder</h4>
+                        <p class="text-sm text-gray-600" id="cat-turmeric-desc">Pure & natural</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="text-center">
+                        <span class="text-3xl mb-2 block">🌿</span>
+                        <h4 class="font-semibold" id="cat-coriander">Coriander Powder</h4>
+                        <p class="text-sm text-gray-600" id="cat-coriander-desc">Aromatic</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="text-center">
+                        <span class="text-3xl mb-2 block">🧅</span>
+                        <h4 class="font-semibold" id="cat-cumin">Cumin Powder</h4>
+                        <p class="text-sm text-gray-600" id="cat-cumin-desc">Fresh ground</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="text-center">
+                        <span class="text-3xl mb-2 block">🫒</span>
+                        <h4 class="font-semibold" id="cat-mustard">Mustard Oil</h4>
+                        <p class="text-sm text-gray-600" id="cat-mustard-desc">100% pure</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow">
+                    <div class="text-center">
+                        <span class="text-3xl mb-2 block">🌶️</span>
+                        <h4 class="font-semibold" id="cat-garam">Garam Masala</h4>
+                        <p class="text-sm text-gray-600" id="cat-garam-desc">Special blend</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800" id="order-title">Place Your Order</h2>
+            
+            <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
+                <form id="orderForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" id="label-name">Full Name</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" id="input-name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" id="label-phone">Phone Number</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent" id="input-phone">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" id="label-address">Delivery Address</label>
+                        <textarea required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent h-24" id="input-address"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" id="label-products">Products & Quantities</label>
+                        <textarea required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent h-32" placeholder="Example: Wheat Flour 10kg x 2 bags, Red Chili Powder 500g x 1 pack" id="input-products"></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2" id="label-notes">Additional Notes</label>
+                        <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent h-24" id="input-notes"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full gradient-bg text-white py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition-opacity" id="submit-btn">
+                        Submit Order
+                    </button>
+                </form>
+                
+                <div id="orderSuccess" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+                    <p class="font-semibold" id="success-message">Order submitted successfully!</p>
+                    <p id="success-note">We will contact you shortly to confirm your order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12" id="contact-title">Contact Us</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📍</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" id="address-title">Address</h3>
+                    <p id="address-text">Liaquatabad Block 6</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📞</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" id="phone-title">Phone</h3>
+                    <div class="space-y-1">
+                        <p><a href="tel:+923112866896" class="hover:text-amber-300">03112866896</a></p>
+                        <p><a href="tel:+923129240289" class="hover:text-amber-300">03129240289</a></p>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">💬</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2" id="whatsapp-title">WhatsApp</h3>
+                    <div class="space-y-2">
+                        <p><a href="https://api.whatsapp.com/send?phone=923112866896&text=Hello%20MD%20SUNFLOWER%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg inline-block transition-colors">03112866896</a></p>
+                        <p><a href="https://api.whatsapp.com/send?phone=923129240289&text=Hello%20MD%20SUNFLOWER%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg inline-block transition-colors">03129240289</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-4 mb-4">
+                <div class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center">
+                    <span class="text-white text-xl font-bold">🌻</span>
+                </div>
+                <h3 class="text-2xl font-bold">MD SUNFLOWER</h3>
+            </div>
+            <p class="text-gray-400" id="footer-text">Premium Quality Products - Fresh Delivery</p>
+            <p class="text-gray-500 text-sm mt-4" id="copyright">© 2024 MD SUNFLOWER. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=923112866896&text=Hello%20MD%20SUNFLOWER%2C%20I%20want%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg flex items-center gap-2 transition-colors">
+            <span class="text-2xl">💬</span>
+            <span class="hidden md:inline font-semibold" id="float-whatsapp">WhatsApp</span>
+        </a>
+    </div>
+
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                'welcome-text': 'Welcome to MD SUNFLOWER',
+                'company-name': 'MD SUNFLOWER',
+                'tagline': 'Premium Quality Products',
+                'call-text': 'Call Now',
+                'whatsapp-text': 'WhatsApp',
+                'nav-home': 'Home',
+                'nav-products': 'Products',
+                'nav-catalog': 'Catalog',
+                'nav-order': 'Order Form',
+                'nav-contact': 'Contact',
+                'hero-title': 'Premium Quality Products',
+                'hero-subtitle': 'Fresh flour, aromatic spices, and pure mustard oil delivered to your doorstep',
+                'hero-btn1': 'View Products',
+                'hero-btn2': 'Order Now',
+                'products-title': 'Our Products',
+                'flour-title': 'Premium Flour',
+                'flour-desc': 'Fresh, high-quality flour for all your baking needs',
+                'flour-size1': '5kg bag',
+                'flour-size2': '10kg bag',
+                'flour-size3': '20kg bag',
+                'flour-price1': 'Wholesale Price',
+                'flour-price2': 'Wholesale Price',
+                'flour-price3': 'Wholesale Price',
+                'spices-title': 'Fresh Spices',
+                'spices-desc': 'Aromatic spices to enhance your cooking',
+                'spices-size1': '250g pack',
+                'spices-size2': '500g pack',
+                'spices-size3': '1kg pack',
+                'spices-price1': 'Wholesale Price',
+                'spices-price2': 'Wholesale Price',
+                'spices-price3': 'Wholesale Price',
+                'oil-title': 'Pure Mustard Oil',
+                'oil-desc': '100% pure and natural mustard oil',
+                'oil-size1': '500ml bottle',
+                'oil-size2': '1L bottle',
+                'oil-size3': '5L container',
+                'oil-price1': 'Wholesale Price',
+                'oil-price2': 'Wholesale Price',
+                'oil-price3': 'Wholesale Price',
+                'catalog-title': 'Product Catalog',
+                'cat-wheat': 'Wheat Flour',
+                'cat-wheat-desc': 'Premium quality',
+                'cat-gram': 'Gram Flour',
+                'cat-gram-desc': 'Fresh ground',
+                'cat-chili': 'Red Chili Powder',
+                'cat-chili-desc': 'Hot & spicy',
+                'cat-turmeric': 'Turmeric Powder',
+                'cat-turmeric-desc': 'Pure & natural',
+                'cat-coriander': 'Coriander Powder',
+                'cat-coriander-desc': 'Aromatic',
+                'cat-cumin': 'Cumin Powder',
+                'cat-cumin-desc': 'Fresh ground',
+                'cat-mustard': 'Mustard Oil',
+                'cat-mustard-desc': '100% pure',
+                'cat-garam': 'Garam Masala',
+                'cat-garam-desc': 'Special blend',
+                'order-title': 'Place Your Order',
+                'label-name': 'Full Name',
+                'label-phone': 'Phone Number',
+                'label-address': 'Delivery Address',
+                'label-products': 'Products & Quantities',
+                'label-notes': 'Additional Notes',
+                'submit-btn': 'Submit Order',
+                'success-message': 'Order submitted successfully!',
+                'success-note': 'We will contact you shortly to confirm your order.',
+                'contact-title': 'Contact Us',
+                'address-title': 'Address',
+                'address-text': 'Liaquatabad Block 6',
+                'phone-title': 'Phone',
+                'whatsapp-title': 'WhatsApp',
+                'footer-text': 'Premium Quality Products - Fresh Delivery',
+                'copyright': '© 2024 MD SUNFLOWER. All rights reserved.',
+                'float-whatsapp': 'WhatsApp'
+            },
+            ur: {
+                'welcome-text': 'MD SUNFLOWER میں خوش آمدید',
+                'company-name': 'MD SUNFLOWER',
+                'tagline': 'اعلیٰ معیار کی مصنوعات',
+                'call-text': 'فون کریں',
+                'whatsapp-text': 'واٹس ایپ',
+                'nav-home': 'ہوم',
+                'nav-products': 'مصنوعات',
+                'nav-catalog': 'کیٹالاگ',
+                'nav-order': 'آرڈر فارم',
+                'nav-contact': 'رابطہ',
+                'hero-title': 'اعلیٰ معیار کی مصنوعات',
+                'hero-subtitle': 'تازہ آٹا، خوشبودار مصالحے، اور خالص سرسوں کا تیل آپ کے گھر تک پہنچایا جاتا ہے',
+                'hero-btn1': 'مصنوعات دیکھیں',
+                'hero-btn2': 'آرڈر کریں',
+                'products-title': 'ہماری مصنوعات',
+                'flour-title': 'پریمیم آٹا',
+                'flour-desc': 'آپ کی تمام بیکنگ ضروریات کے لیے تازہ، اعلیٰ معیار کا آٹا',
+                'flour-size1': '5 کلو بیگ',
+                'flour-size2': '10 کلو بیگ',
+                'flour-size3': '20 کلو بیگ',
+                'flour-price1': 'ہول سیل ریٹ',
+                'flour-price2': 'ہول سیل ریٹ',
+                'flour-price3': 'ہول سیل ریٹ',
+                'spices-title': 'تازہ مصالحے',
+                'spices-desc': 'آپ کے کھانے کو بہتر بنانے کے لیے خوشبودار مصالحے',
+                'spices-size1': '250 گرام پیک',
+                'spices-size2': '500 گرام پیک',
+                'spices-size3': '1 کلو پیک',
+                'spices-price1': 'ہول سیل ریٹ',
+                'spices-price2': 'ہول سیل ریٹ',
+                'spices-price3': 'ہول سیل ریٹ',
+                'oil-title': 'خالص سرسوں کا تیل',
+                'oil-desc': '100% خالص اور قدرتی سرسوں کا تیل',
+                'oil-size1': '500 ملی بوتل',
+                'oil-size2': '1 لیٹر بوتل',
+                'oil-size3': '5 لیٹر کنٹینر',
+                'oil-price1': 'ہول سیل ریٹ',
+                'oil-price2': 'ہول سیل ریٹ',
+                'oil-price3': 'ہول سیل ریٹ',
+                'catalog-title': 'مصنوعات کیٹالاگ',
+                'cat-wheat': 'گندم کا آٹا',
+                'cat-wheat-desc': 'پریمیم کوالٹی',
+                'cat-gram': 'چنے کا آٹا',
+                'cat-gram-desc': 'تازہ پسا ہوا',
+                'cat-chili': 'لال مرچ پاؤڈر',
+                'cat-chili-desc': 'تیز اور مسالہ دار',
+                'cat-turmeric': 'ہلدی پاؤڈر',
+                'cat-turmeric-desc': 'خالص اور قدرتی',
+                'cat-coriander': 'دھنیا پاؤڈر',
+                'cat-coriander-desc': 'خوشبودار',
+                'cat-cumin': 'زیرہ پاؤڈر',
+                'cat-cumin-desc': 'تازہ پسا ہوا',
+                'cat-mustard': 'سرسوں کا تیل',
+                'cat-mustard-desc': '100% خالص',
+                'cat-garam': 'گرم مصالحہ',
+                'cat-garam-desc': 'خصوصی ملاوٹ',
+                'order-title': 'اپنا آرڈر دیں',
+                'label-name': 'پورا نام',
+                'label-phone': 'فون نمبر',
+                'label-address': 'ڈیلیوری کا پتہ',
+                'label-products': 'مصنوعات اور مقدار',
+                'label-notes': 'اضافی نوٹس',
+                'submit-btn': 'آرڈر جمع کریں',
+                'success-message': 'آرڈر کامیابی سے جمع ہو گیا!',
+                'success-note': 'ہم جلد ہی آپ کے آرڈر کی تصدیق کے لیے رابطہ کریں گے۔',
+                'contact-title': 'ہم سے رابطہ کریں',
+                'address-title': 'پتہ',
+                'address-text': 'لیاقت آباد بلاک 6',
+                'phone-title': 'فون',
+                'whatsapp-title': 'واٹس ایپ',
+                'footer-text': 'اعلیٰ معیار کی مصنوعات - تازہ ڈیلیوری',
+                'copyright': '© 2024 MD SUNFLOWER۔ تمام حقوق محفوظ ہیں۔',
+                'float-whatsapp': 'واٹس ایپ'
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            const elements = document.querySelectorAll('[id]');
+            
+            elements.forEach(element => {
+                const key = element.id;
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update placeholders
+            const productsInput = document.getElementById('input-products');
+            if (lang === 'ur') {
+                productsInput.placeholder = 'مثال: گندم کا آٹا 10 کلو x 2 بیگ، لال مرچ پاؤڈر 500 گرام x 1 پیک';
+                document.body.classList.add('urdu-text');
+            } else {
+                productsInput.placeholder = 'Example: Wheat Flour 10kg x 2 bags, Red Chili Powder 500g x 1 pack';
+                document.body.classList.remove('urdu-text');
+            }
+
+            // Update button styles
+            document.getElementById('en-btn').className = lang === 'en' ? 
+                'px-3 py-1 bg-white text-amber-600 rounded text-sm font-medium' : 
+                'px-3 py-1 bg-amber-700 text-white rounded text-sm font-medium';
+            document.getElementById('ur-btn').className = lang === 'ur' ? 
+                'px-3 py-1 bg-white text-amber-600 rounded text-sm font-medium' : 
+                'px-3 py-1 bg-amber-700 text-white rounded text-sm font-medium';
+        }
+
+        // Form submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = document.getElementById('input-name').value;
+            const phone = document.getElementById('input-phone').value;
+            const address = document.getElementById('input-address').value;
+            const products = document.getElementById('input-products').value;
+            const notes = document.getElementById('input-notes').value;
+            
+            // Create WhatsApp message
+            const message = `New Order from MD SUNFLOWER Website:\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\nProducts: ${products}\nNotes: ${notes}`;
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=923112866896&text=${encodeURIComponent(message)}`;
+            
+            // Show success message
+            document.getElementById('orderSuccess').classList.remove('hidden');
+            this.reset();
+            
+            // Open WhatsApp after a short delay
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            }, 1000);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97321a9ac30b2490',t:'MTc1NTg2MjkxNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
