@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ashii’s Herbal – Organic Products</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    h2 {
+      color: #2e7d32;
+      border-bottom: 2px solid #2e7d32;
+      padding-bottom: 5px;
+    }
+    .product {
+      background: #f1f8e9;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+    .product h3 {
+      margin: 0 0 10px 0;
+      color: #1b5e20;
+    }
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #1b5e20;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    .btn:hover {
+      background: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ashii’s Herbal</h1>
+    <p>Pure · Organic · Healthy</p>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="products">
+      <h2>Our Products</h2>
+
+      <div class="product">
+        <h3>Stone-Ground Atta (Flour)</h3>
+        <p>100% natural, stone-milled flour that preserves all nutrients for a healthy lifestyle.</p>
+        <ul>
+          <li>Soft, fluffy rotis</li>
+          <li>High in fiber</li>
+          <li>No chemicals or preservatives</li>
+        </ul>
+      </div>
+
+      <div class="product">
+        <h3>Mustard Oil (Kachi Ghani)</h3>
+        <p>Cold-pressed mustard oil, rich in Omega-3 and antioxidants. Perfect for cooking & massage.</p>
+        <ul>
+          <li>Improves heart health</li>
+          <li>Boosts immunity</li>
+          <li>Promotes glowing skin</li>
+        </ul>
+      </div>
+
+      <div class="product">
+        <h3>Spices</h3>
+        <p>Fresh, organic spices to add authentic taste to your meals.</p>
+        <ul>
+          <li>Turmeric – Pure & bright</li>
+          <li>Red Chili – Spicy & aromatic</li>
+          <li>Coriander – Fresh & fragrant</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Ashii’s Herbal is dedicated to bringing you the purest and healthiest products – directly from nature to your kitchen. We believe in traditional methods, chemical-free farming, and supporting healthy living.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>📞 Call or WhatsApp: <strong>+92-300-1234567</strong></p>
+      <p>📧 Email: <strong>ashiisherbal@gmail.com</strong></p>
+      <a class="btn" href="https://wa.me/923001234567" target="_blank">Order on WhatsApp</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Ashii’s Herbal – All rights reserved.</p>
+  </footer>
+</body>
+</html>
